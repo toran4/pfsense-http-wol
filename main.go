@@ -3,22 +3,27 @@ package main
 import (
 	"log"
 	"net/http"
+	"net/url"
 	"os"
 	"path"
 
 	"github.com/joho/godotenv"
 )
 
-func handleRequests(url string, user string, password string) {
+func handleRequests(host string, user string, password string) {
 	handleWoLRequest := func(w http.ResponseWriter, r *http.Request) {
 		query := r.URL.Query()
-		mac := query.Get("mac")
+		mac, err := url.QueryUnescape(query.Get("mac"))
+		if err != nil {
+			w.WriteHeader(http.StatusBadRequest)
+			return
+		}
 		targetIf := query.Get("if")
-		succeeded := sendWoL(url, user, password, mac, targetIf)
+		succeeded := sendWoL(host, user, password, mac, targetIf)
 		if succeeded {
-			w.WriteHeader(200)
+			w.WriteHeader(http.StatusOK)
 		} else {
-			w.WriteHeader(500)
+			w.WriteHeader(http.StatusInternalServerError)
 		}
 	}
 
