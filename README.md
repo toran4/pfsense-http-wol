@@ -6,7 +6,9 @@ You need a [pfSense](https://www.pfsense.org/) router apable of sending Wake-On-
 ## Usage
 Can be used to wake a device capable of WoL by a REST request. Can be used in situations when wake-on-lan can be hard to achive like when on VPN or between different VLAN or subnets.
 
-Send WoL request by do a GET to http://{server adress}/wol?mac={mac adress}&if={interface}
+Send WoL request by do a GET to http://{server address}/wol?mac={mac address}&if={interface} where mac is the mac address of the computer to wake and if s the interface in pfSense that the cmputers network is on.
+
+Example to wake a computer with mac 34:31:4d:69:39:03 on interface opt4  when pfSense is runnon on ip 192.168.0.1: ```https://192.168.0.1/wol?mac=34:31:4d:69:39:03&if=opt4```
 
 
 
