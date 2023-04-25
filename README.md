@@ -1,4 +1,4 @@
-# HTTP to WakeOnLan thru Pfsense
+# HTTP to WakeOnLan thru pfSense
 REST API to trigger Wake-on-Lan thru pfSense. 
 
 You need a [pfSense](https://www.pfsense.org/) router apable of sending Wake-On-Lan requests to devices in the network.
