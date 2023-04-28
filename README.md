@@ -4,7 +4,7 @@ This project provides a REST API that allows you to trigger Wake-on-Lan (WoL) re
 
 ## Background
 
-Wake-on-Lan is a network protocol that allows you to wake up a computer or other device from a sleep or hibernate state by sending a special "magic packet" over the network. While Wake-on-Lan is a useful feature, it can be hard to achieve in certain network configurations, such as when you are on a VPN or when devices are on different subnets. This project makes it easy to wake up devices on your network, regardless of their location.
+Wake-on-Lan is a network protocol that allows you to wake up a computer or other device by sending a special "magic packet" over the network. While Wake-on-Lan is a useful feature, it can be hard to achieve in certain network configurations, such as when you are on a VPN or when devices are on different subnets. This project makes it easy to wake up devices on your network, regardless of their location.
 
 You need a [pfSense](https://www.pfsense.org/) router capable of sending Wake-On-Lan requests to devices in the network.
 
