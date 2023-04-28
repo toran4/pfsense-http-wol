@@ -1,7 +1,12 @@
 # HTTP to WakeOnLan thru pfSense
-REST API to trigger Wake-on-Lan thru pfSense. 
 
-You need a [pfSense](https://www.pfsense.org/) router apable of sending Wake-On-Lan requests to devices in the network.
+This project provides a REST API that allows you to trigger Wake-on-Lan (WoL) requests through pfSense, a popular open-source router/firewall platform. With this API, you can wake up devices on your network remotely, even if they are on a different VLAN or subnet. 
+
+## Background
+
+Wake-on-Lan is a network protocol that allows you to wake up a computer or other device from a sleep or hibernate state by sending a special "magic packet" over the network. While Wake-on-Lan is a useful feature, it can be hard to achieve in certain network configurations, such as when you are on a VPN or when devices are on different subnets. This project makes it easy to wake up devices on your network, regardless of their location.
+
+You need a [pfSense](https://www.pfsense.org/) router capable of sending Wake-On-Lan requests to devices in the network.
 
 ## Usage
 Can be used to wake a device capable of WoL by a REST request. Can be used in situations when wake-on-lan can be hard to achive like when on VPN or between different VLAN or subnets.
