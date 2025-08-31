@@ -33,6 +33,9 @@ func handleRequests(host string, user string, password string) {
 
 func main() {
 	var configDir = os.Getenv("CONFIG_DIR")
+	if configDir == "" {
+		configDir = "/config"
+	}
 	var configFile = path.Join(configDir, ".env")
 	var myEnv map[string]string
 	myEnv, err := godotenv.Read(configFile)
